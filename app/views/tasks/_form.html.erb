@@ -1,10 +1,8 @@
-<h1>id: <%= @task.id %> 編集ページ</h1>
-
-<%= form_with(model: @task, local: true) do |f| %>
-  <% if @task.errors.any? %>
+<%= form_with(model: task, local: true) do |f| %>
+  <% if task.errors.any? %>
     <div id="error_explanation">
       <ul>
-        <% @task.errors.full_messages.each do |msg| %>
+        <% task.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
@@ -19,5 +17,3 @@
 
   <%= f.submit '投稿' %>
 <% end %>
-
-<%= link_to '一覧に戻る', task_path %>
